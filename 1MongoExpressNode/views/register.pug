@@ -1,0 +1,21 @@
+extends layout
+block content
+    h1 #{title}
+    form(method="POST", action="/users/register")
+        .form-group
+            label Full Name:
+            input.form-control(type="text" name="name1")
+        .form-group
+            label email:
+            input.form-control(type="email" name="email")
+        .form-group
+            label User name:
+            input.form-control(type="text" name="username")
+        .form-group
+            label Password:
+            input.form-control(type="password" name="pass1")
+        .form-group
+            label Confirm Password:
+            input.form-control(type="password" name="pass2")
+
+        input.btn.btn-primary(type="submit", value="Submit")

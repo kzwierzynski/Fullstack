@@ -1,0 +1,9 @@
+<h1>
+    {{title}}
+</h1>
+
+<section>
+    <ul>
+        <child *ngFor="let item of items; let count = index;" [content]="item" [label]="count + 1"></child>
+    </ul>
+</section>

@@ -1,0 +1,29 @@
+<h2>{{title}}</h2>
+<span>1 + 1</span>
+<form>
+    <fieldset>
+        <legend>Indicator</legend>
+        <input type="checkbox" [(ngModel)]="indicator" name="first">
+    </fieldset>
+    <fieldset>
+        <legend>Count</legend>
+        <input type="range" min="0" max="5" step="1" [(ngModel)]="count" name="second">
+    </fieldset>
+    <fieldset>
+        <legend>Messages</legend>
+        <ol>    <!--  ngFor to create a for loop over the msgs property using a msg variable for each item -->
+            <li *ngFor="let msg of msgs">
+                {{msg}}
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Results</legend>
+        <ul>
+            <li><strong>Indicator:</strong> {{indicator}}</li>
+            <li><strong>Count:</strong> {{count}}</li>
+            <li><strong>Title:</strong> {{title}}</li>
+            <li><strong>Messages:</strong> {{messages}}</li>
+        </ul>
+    </fieldset>
+</form>

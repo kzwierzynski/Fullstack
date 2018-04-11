@@ -1,0 +1,2 @@
+Strona aplikacji z Angulara (pocz¹tkowo po "ng serve": localhost:4200) zbudowana do folderu "public". 
+Teraz wystarczy odpaliæ "nodemon" dla apki BackEndowej i na porcie localhost:3000 bêdzie dosêtpna pe³na funkcjonalnoœæ.
