@@ -1,0 +1,13 @@
+<!-- <div class="alert alert-danger" *ngIf="srvBlocked">
+    <p>Our server is currently under maintenance, all transactions temporarily suspended. Sorry for the inconvenience.</p>
+</div> -->
+<app-logdiv *ngIf="!auth.loggedIn()"></app-logdiv>
+
+<div class="row">
+  <div class="col-lg-6">
+      <app-buy *ngIf="auth.loggedIn()"></app-buy>
+  </div>
+  <div class="col-lg-6">
+      <app-sell *ngIf="auth.loggedIn()"></app-sell>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<br>
+<div class="card mb-3 center-block" style="width: 80%; margin: 0 auto;" *ngIf="sellBuy.buy">
+  <div class="card-header"><h4>Buy desired currency</h4></div>
+  <div class="card-body">
+    <form>
+      <div class="mb-2 form-row">
+        <div class="col text-right">
+            <label for="buy" class="col-form-label">Buy: </label>
+        </div>
+        <div class="col">
+            <input type="number" class="form-control" [(ngModel)]="buyCurrency" name="buyCurrency" min="0" step="1">
+        </div>
+        
+        <div class="col">
+            <label class="col-form-label">{{rates.currCodes[sellBuy.i]}} unit(s) = {{rates.currUnits[sellBuy.i]}}</label> 
+        </div>
+        <div class="col">
+            <label class="col-form-label">for {{ (rates.currRates.items[sellBuy.i].sellPrice * buyCurrency).toFixed(2) }} PLN</label> 
+        </div>
+        <div class="col">
+            <button class="btn btn-primary btn-lg" mwlConfirmationPopover *ngIf="!rates.srvBlocked"
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="bottom"
+            (confirm)="onClickBuy()"
+            (cancel)="cancelClicked = true">
+            Buy Currency
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card mb-3 center-block" style="width: 80%; margin: 0 auto;" *ngIf="!sellBuy.buy">
+    <div class="card-header"><h4>Sell desired currency</h4></div>
+    <div class="card-body">
+      <form>
+        <div class="mb-2 form-row">
+          <div class="col text-right">
+              <label for="sell" class="col-form-label">Sell: </label>
+          </div>
+          <div class="col">
+              <input type="number" class="form-control" [(ngModel)]="buyCurrency" name="buyCurrency" min="1" step="1">
+          </div>
+          
+          <div class="col">
+              <label class="col-form-label">{{rates.currCodes[sellBuy.i]}} unit(s) = {{rates.currUnits[sellBuy.i]}}</label> 
+          </div>
+          <div class="col">
+              <label class="col-form-label">for {{ (rates.currRates.items[sellBuy.i].sellPrice * buyCurrency).toFixed(2) }} PLN</label> 
+          </div>
+          <div class="col">
+              <button class="btn btn-primary btn-lg" mwlConfirmationPopover *ngIf="!rates.srvBlocked"
+              [popoverTitle]="popoverTitle"
+              [popoverMessage]="popoverMessage"
+              placement="bottom"
+              (confirm)="onClickSell()"
+              (cancel)="cancelClicked = true">
+              Sell Currency
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+        

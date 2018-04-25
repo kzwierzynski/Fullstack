@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+:root {
+    --shadow: 0 1px 5px rgba(44, 44, 44, 0.25);
+}
+  
+.card, .jumbotron{
+    border: none;
+    box-shadow: var(--shadow);
+}
